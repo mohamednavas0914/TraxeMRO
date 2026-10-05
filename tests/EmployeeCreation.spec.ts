@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://qa-emrov8.trax.aero/emro/');
+  await page.getByText('I agree, continue browsing', { exact: true }).click();
+  await page.locator('input[name="mainForm:j_idt34"]').click();
+  await page.locator('input[name="mainForm:j_idt34"]').fill('adm');
+  await page.locator('input[name="mainForm:j_idt68"]').click();
+  await page.locator('input[name="mainForm:j_idt68"]').fill('trax');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('link', { name: 'Modules ' }).click();
+  await page.getByRole('link', { name: 'Settings ' }).click();
+  await page.getByRole('link', { name: 'UPDATE ' }).click();
+  await page.getByRole('link', { name: 'Employee' }).click();
+  await page.getByRole('menuitem', { name: 'New' }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19230"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19230"]').fill('nvs');
+  await page.getByRole('link', { name: 'Category' }).click();
+  await page.locator('[id="mainForm:oux_system_tran_code_dd_75d3fa8d2b214be8aca18622b10680fd_controller_close"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19246"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19246"]').fill('acm');
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19278"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19278"]').fill('navas');
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19326"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19326"]').fill('mia');
+  await page.getByRole('link', { name: 'Site' }).click();
+  await page.locator('[id="mainForm:oux_location_site_dd_46d47acc71fc4017a80fc5dacf041019_controller_close"]').click();
+  await page.getByRole('tab', { name: 'Optional' }).click();
+  await page.getByRole('combobox', { name: '__/__/____' }).click();
+  await page.getByRole('link', { name: '1', exact: true }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt20198"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt20198"]').fill('aca');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.getByRole('tab', { name: 'General' }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19262"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt12038:j_idt19262"]').fill('nvs');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+});

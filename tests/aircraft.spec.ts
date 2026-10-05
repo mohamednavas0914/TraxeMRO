@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://qa-emrov8.trax.aero/emro/');
+  await page.getByText('I agree, continue browsing', { exact: true }).click();
+  await page.locator('input[name="mainForm:j_idt34"]').click();
+  await page.locator('input[name="mainForm:j_idt34"]').fill('adm');
+  await page.locator('input[name="mainForm:j_idt68"]').click();
+  await page.locator('input[name="mainForm:j_idt68"]').fill('trax');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('link', { name: 'Modules ' }).click();
+  await page.getByRole('link', { name: 'Settings ' }).click();
+  await page.getByRole('link', { name: 'UPDATE ' }).click();
+  await page.getByRole('link', { name: 'Aircraft', exact: true }).click();
+  await page.getByRole('menuitem', { name: 'New' }).click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56927"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56927"]').fill('navsat');
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56947"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56947"]').fill('1409');
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56980"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56980"]').fill('nav');
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56996"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56996"]').fill('10');
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56980"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56980"]').fill('nvs');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56927"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt56927"]').fill('sat');
+  await page.getByRole('tab', { name: 'Optional 1' }).click();
+  await page.getByRole('tab', { name: 'Optional 2' }).click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt57903"]').click();
+  await page.locator('input[name="mainForm:mainTabView:dwsTabViewoux_aircraft_master_eu_a191d85bde734875a9ad14286abc3ff1:j_idt57903"]').fill('01');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.locator('.ui-radiobutton-box.ui-widget.ui-state-default.ui-state-active.ui-state-focus > .ui-radiobutton-icon').click();
+  await page.getByRole('button', { name: 'Submit' }).click();
+});

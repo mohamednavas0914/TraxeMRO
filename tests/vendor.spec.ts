@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://qa-emrov8.trax.aero/emro/');
+  await page.getByText('I agree, continue browsing', { exact: true }).click();
+  await page.locator('input[name="mainForm:j_idt34"]').click();
+  await page.locator('input[name="mainForm:j_idt34"]').fill('adm');
+  await page.locator('input[name="mainForm:j_idt68"]').click();
+  await page.locator('input[name="mainForm:j_idt68"]').fill('tr');
+  await page.locator('input[name="mainForm:j_idt68"]').press('CapsLock');
+  await page.locator('input[name="mainForm:j_idt68"]').press('CapsLock');
+  await page.locator('input[name="mainForm:j_idt68"]').fill('tax');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.locator('input[name="mainForm:j_idt68"]').click();
+  await page.locator('input[name="mainForm:j_idt68"]').fill('trax');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('link', { name: 'Modules ' }).click();
+  await page.getByRole('link', { name: 'Settings ' }).click();
+  await page.getByRole('link', { name: 'UPDATE ' }).click();
+  await page.getByRole('link', { name: 'Vendor' }).click();
+  await page.getByRole('menuitem', { name: 'New' }).click();
+  await page.getByRole('link', { name: 'Category' }).click();
+  await page.locator('[id="mainForm:oux_system_tran_code_dd_36fafb15c34d4c98b2e576fa9dadcddb_controller_close"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134598"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134598"]').fill('mfr');
+  await page.locator('.ui-chkbox-box').first().click();
+  await page.locator('.ui-chkbox-box.ui-widget.ui-state-default.ui-state-hover').click();
+  await page.getByRole('link', { name: 'Currency' }).click();
+  await page.locator('button[name="mainForm:dw_system_tran_code_dds_6508e842ffa541f09c470fb24c391d07:3:j_idt10297"]').click();
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134559"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134559"]').fill('satns');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134631"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt134545:j_idt134631"]').fill('satnav');
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await expect(page.getByRole('tabpanel', { name: 'Vendor Master' }).getByText('Data was saved successfully!')).toBeVisible();
+});

@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://qa-emrov8.trax.aero/emro/');
+  await page.getByText('I agree, continue browsing', { exact: true }).click();
+  await page.locator('input[name="mainForm:j_idt34"]').click();
+  await page.locator('input[name="mainForm:j_idt34"]').fill('adm');
+  await page.locator('input[name="mainForm:j_idt68"]').click();
+  await page.locator('input[name="mainForm:j_idt68"]').fill('trax');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('link', { name: 'Modules ' }).click();
+  await page.getByRole('link', { name: 'Settings ' }).click();
+  await page.getByRole('link', { name: 'UPDATE ' }).click();
+  await page.getByRole('link', { name: 'P/N', exact: true }).click();
+  await page.getByRole('menuitem', { name: 'New' }).click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt83553:j_idt87995"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt83553:j_idt87995"]').fill('tyu');
+  await page.locator('textarea[name="mainForm:mainTabView:j_idt83553:j_idt83609"]').click();
+  await page.locator('textarea[name="mainForm:mainTabView:j_idt83553:j_idt83609"]').fill('fgh');
+  await page.locator('input[name="mainForm:mainTabView:j_idt83553:j_idt88047"]').click();
+  await page.locator('input[name="mainForm:mainTabView:j_idt83553:j_idt88047"]').fill('ea');
+  await page.getByRole('link', { name: 'Category', exact: true }).click();
+  await page.locator('[id="mainForm:dw_system_tran_code_dds_43f4cdf6200944ada52891f4806382f9:0:j_idt10297"]').click();
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('link', { name: 'Manufacturer' }).click();
+  await page.locator('[id="mainForm:j_idt161960"]').click();
+  await page.locator('[id="mainForm:j_idt161960"]').fill('a');
+  await page.locator('button[name="mainForm:dw_vendor_master_dd_81267e3028634036964d345fe1a4c4f0:0:j_idt161981"]').click();
+  await page.getByRole('menuitem', { name: 'Save' }).click();
+  await expect(page.getByRole('tabpanel', { name: 'P/N Master' }).getByText('Data was saved successfully!')).toBeVisible();
+});
